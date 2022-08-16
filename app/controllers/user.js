@@ -57,7 +57,8 @@ exports.updateSingle = (req, res) => {
  */
 exports.insertData = (req, res) => {
     const data = req.body
-    model.create(data, (err, docs) => {
+    const datos = data.values;
+    model.create(datos, (err, docs) => {
         if (err) {
             res.status(422.).send({ error: 'Error' })
         } else {
